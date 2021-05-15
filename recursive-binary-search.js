@@ -1,11 +1,9 @@
 const recursiveBinarySearch = (arrayofNumbers, target) => {
   arrayofNumbers.sort((a, b) => a - b);
-  console.log(arrayofNumbers);
   return performSearch(arrayofNumbers, target);
 }
 
 const performSearch = (array, target) => {
-  console.log(array);
   if(array.length == 0){
     return false;
   }else {
@@ -13,7 +11,7 @@ const performSearch = (array, target) => {
     if(array[midIndex] === target){
       return true;
     } else {
-      if(array[midIndex] < target) {
+      if(array[midIndex] < target) { 
         return performSearch(array.slice(midIndex + 1), target);
       }else{
         return performSearch(array.slice(0, midIndex), target);
@@ -27,5 +25,5 @@ const verify = (index) => {
   console.log(`Target found: ${result}`)
 }
 
-const result = recursiveBinarySearch(numbers, 90);
+const result = recursiveBinarySearch(numbers, 51);
 verify(result);
